@@ -37,6 +37,13 @@
             font-weight: bold;
         }
 
+        /* ===== Tambahan Layout Grid di Main ===== */
+        main {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
         section {
             padding: 30px 20px;
         }
@@ -84,10 +91,13 @@
             margin: 10px 40px;
         }
 
-        #projects img, #projects video {
+        #projects img,
+        #projects video {
             display: block;
             margin: 20px auto;
             border-radius: 8px;
+            max-width: 100%;
+            height: auto;
         }
 
         #contact form {
@@ -96,7 +106,8 @@
             text-align: left;
         }
 
-        #contact input, #contact textarea {
+        #contact input,
+        #contact textarea {
             width: 100%;
             padding: 10px;
             margin-bottom: 15px;
@@ -124,6 +135,38 @@
             color: #ffd6e5;
             text-decoration: none;
         }
+
+        /* ===== Responsive Grid untuk Layout Section ===== */
+        @media (min-width: 768px) {
+            #about article {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                gap: 20px;
+                align-items: center;
+                text-align: left;
+            }
+
+            #projects article {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            #contact form {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+
+            #contact form label:nth-child(3) {
+                grid-column: 1 / -1;
+            }
+
+            #contact button {
+                grid-column: 1 / -1;
+                width: fit-content;
+            }
+        }
     </style>
 </head>
 <body>
@@ -144,23 +187,25 @@
             <h2>Tentang Saya</h2>
             <article>
                 <img src="Profil PW.jpg" alt="Tentang Saya" width="150" height="150">
-                <p>Halo! Saya Aszra Aurelita Amanah Firdausy Tjahjaningrat</p>
-                <p>Seorang mahasiswa, program studi Sistem Informasi UISI</p>
-                <p>Saat ini saya sedang menjalani pendidikan semester 4</p>
+                <div>
+                    <p>Halo! Saya Aszra Aurelita Amanah Firdausy Tjahjaningrat</p>
+                    <p>Seorang mahasiswa, program studi Sistem Informasi UISI</p>
+                    <p>Saat ini saya sedang menjalani pendidikan semester 4</p>
+                </div>
             </article>
         </section>
         
         <section id="hobby">
-    <h2>Hobi Saya</h2>
-    <ul>
-        <li>Membaca buku</li>
-        <li>Menonton film</li>
-        <li>Mendengarkan musik</li>
-    </ul>
-    <audio controls>
-        <source src="indonesia-raya.mp3" type="audio/mp3">
-    </audio>
-</section>
+            <h2>Hobi Saya</h2>
+            <ul>
+                <li>Membaca buku</li>
+                <li>Menonton film</li>
+                <li>Mendengarkan musik</li>
+            </ul>
+            <audio controls>
+                <source src="indonesia-raya.mp3" type="audio/mp3">
+            </audio>
+        </section>
 
         <section id="projects">
             <h2>Projek Saya</h2>
