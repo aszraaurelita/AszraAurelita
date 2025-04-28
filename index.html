@@ -4,169 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profil Saya</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background-color: #fefeff;
-        }
-
-        header {
-            background-color: #00307e;
-            color: #ffffff;
-            text-align: center;
-            padding: 20px 0;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 10px 0 0;
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        nav ul li {
-            margin: 0 15px;
-        }
-
-        nav ul li a {
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        main {
-            display: block;
-        }
-
-        section {
-            padding: 20px 15px;
-            margin: 0;
-        }
-
-        section:nth-child(odd) {
-            background-color: #ffe6f0; /* pink soft */
-        }
-
-        section:nth-child(even) {
-            background-color: #e6f0ff; /* biru soft */
-        }
-
-        h2 {
-            text-align: center;
-            color: #00307e;
-        }
-
-        #about article {
-            text-align: center;
-        }
-
-        #about img {
-            border-radius: 50%;
-            display: block;
-            margin: 0 auto 15px;
-        }
-
-        #hobby ul {
-            list-style-type: decimal;
-            margin-left: 40px;
-            text-align: left;
-        }
-
-        #hobby p {
-            margin: 10px 40px;
-            text-align: left;
-        }
-
-        #projects h3 {
-            text-align: center;
-        }
-
-        #projects p {
-            text-align: left;
-            margin: 10px 40px;
-        }
-
-        #projects img,
-        #projects video {
-            display: block;
-            margin: 20px auto;
-            border-radius: 8px;
-            max-width: 100%;
-            height: auto;
-        }
-
-        #contact form {
-            max-width: 600px;
-            margin: auto;
-            text-align: left;
-        }
-
-        #contact input,
-        #contact textarea {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 15px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-        }
-
-        #contact button {
-            background-color: #00307e;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        footer {
-            background-color: #002050;
-            color: #ffffff;
-            padding: 30px 20px;
-            text-align: center;
-        }
-
-        footer a {
-            color: #ffd6e5;
-            text-decoration: none;
-        }
-
-        @media (min-width: 768px) {
-            #about article {
-                display: grid;
-                grid-template-columns: 1fr 2fr;
-                gap: 20px;
-                align-items: center;
-                text-align: left;
-            }
-
-            #projects article {
-                display: grid;
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-
-            #contact form {
-                max-width: 600px;
-                margin: auto;
-                display: flex;
-                flex-direction: column;
-                gap: 15px;
-            }
-
-            #contact form label:nth-child(3) {
-                grid-column: 1 / -1;
-            }
-
-            #contact button {
-                grid-column: 1 / -1;
-                width: fit-content;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
@@ -177,6 +14,7 @@
                 <li><a href="#hobby">Hobi Saya</a></li>
                 <li><a href="#projects">Proyek</a></li>               
                 <li><a href="#contact">Hubungi saya</a></li>
+                <li><a href="#guestbook">buku tamu</a></li>
             </ul>
         </nav>
     </header>
@@ -228,11 +66,22 @@
                 <button type="submit">Kirim</button>
             </form>
         </section>
+
+        <section id="guestbook">
+            <h2>Guestbook</h2>
+            <form>
+                <label>Nama:<br><input type="text" required></label>
+                <label><br>Pesan:<br><textarea required></textarea></label>
+                <button type="submit">Kirim</button>
+            </form>
+        </section>
     </main>
 
     <footer>
         <p>Web ini dibuat oleh: Aszra Aurelita Amanah Firdausy Tjahjaningrat</p>
         <p>Kontak Email: <a href="mailto:aszra.tjahjaningrat23@student.uisi.ac.id">aszra.tjahjaningrat23@student.uisi.ac.id</a></p>
     </footer>
+
+    <link rel="stylesheet" href="style.css">
 </body>
 </html>
