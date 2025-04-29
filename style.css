@@ -129,7 +129,6 @@ body {
             text-decoration: none;
         }
 
-        /* ===== Responsive Grid untuk Layout Section ===== */
         @media (min-width: 768px) {
             #about article {
                 display: grid;
@@ -150,7 +149,7 @@ body {
                 margin: auto;
                 display: flex;
                 flex-direction: column;
-                gap: 15px; /* berikan jarak antar elemen */
+                gap: 15px; 
             }
 
             #contact form label:nth-child(3) {
@@ -215,7 +214,6 @@ body {
                 background-color: #002060;
             }
             
-            /* Styling daftar tamu */
             #guest-list {
                 list-style-type: none;
                 padding: 0;
@@ -233,9 +231,8 @@ body {
                 align-items: center;
             }
             
-            /* Tombol kecil untuk Selesai dan Hapus */
             #guest-list button {
-                background-color: #ff69b4; /* pink */
+                background-color: #ff69b4; 
                 color: white;
                 border: none;
                 padding: 5px 10px;
@@ -248,5 +245,24 @@ body {
             #guest-list button:hover {
                 background-color: #ff1493;
             }
+
+            #photo-gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 15px;
+                padding: 20px;
+            }
+            
+            #photo-gallery img {
+                width: 100%;
+                border-radius: 10px;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+                transition: transform 0.3s ease;
+            }
+            
+            #photo-gallery img:hover {
+                transform: scale(1.05);
+            }
+            
         
         
