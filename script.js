@@ -39,22 +39,20 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
     const PEXELS_API_KEY = 'MiNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi';
-    
-    fetch(`https://api.pexels.com/v1/search?query=nature&per_page=9`, {
-        headers: {
-            Authorization: 'MiNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi'
-        }
-    })
-    .then(response => response.json())
-    .then(data => {
-        const gallery = document.getElementById('photo-gallery');
-        data.photos.forEach(photo => {
-            const img = document.createElement('img');
-            img.src = photo.src.medium;
-            img.alt = photo.photographer;
-            gallery.appendChild(img);
-        });
-    })
-    .catch(error => {
-        console.error('Gagal mengambil foto dari Pexels:', error);
+    const query = 'nature'; 
+    const perPage = 9;
+    fetch('/api/pexels?query=nature&per_page=9')
+  .then(res => res.json())
+  .then(data => {
+    const gallery = document.getElementById('photo-gallery');
+    data.photos.forEach(photo => {
+      const img = document.createElement('img');
+      img.src = photo.src.medium;
+      img.alt = photo.photographer;
+      gallery.appendChild(img);
     });
+  })
+  .catch(err => {
+    console.error('Gagal mengambil foto dari Pexels:', err);
+  });
+
