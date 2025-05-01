@@ -38,29 +38,24 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-  fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
-    .then(response => console.log(responese))
-    .then(data => console.log(data.id))
-    .catch(error => console.error(error));
+async function fetchData() {
 
-  //   const query = 'nature'; 
-  //   const perPage = 9;
-  //   fetch('https://cors-anywhere.herokuapp.com/https://api.pexels.com/v1/search?query=nature&per_page=9', {
-  //     headers: {
-  //       Authorization: 'iNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi'    
-  //     }
-  //   })
-  //     .then(res => res.json())
-  // .then(data => {
-  //   const gallery = document.getElementById('photo-gallery');
-  //   data.photos.forEach(photo => {
-  //     const img = document.createElement('img');
-  //     img.src = photo.src.medium;
-  //     img.alt = photo.photographer;
-  //     gallery.appendChild(img);
-  //   });
-  // })
-  // .catch(err => {
-  //   console.error('Gagal mengambil foto dari Pexels:', err);
-  // });
+  try{
+    const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
+    const response = await fetch('https://pokeapi.co/api/v2/pokemon/${pokemonName}');
+    
+    if (!response.ok){
+      throw new Error("Could not fetch resource");
+    }
+    const data = await response.json();
+    const pokemonSprite = data.sprites.front_default;
+    const imgElement = document.getElementById("pokemonSprite");
 
+    imgElement.src = pokemonSprite;
+    imgElement.style.display = "block";
+  }
+  catch(error){
+    console.error(error);
+  }
+  
+}

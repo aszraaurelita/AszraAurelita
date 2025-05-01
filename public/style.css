@@ -150,6 +150,7 @@ body {
                 display: flex;
                 flex-direction: column;
                 gap: 15px; 
+                text-align: left;
             }
 
             #contact form label:nth-child(3) {
@@ -161,11 +162,6 @@ body {
                 width: fit-content;
             }
         
-            }
-            #contact form {
-                max-width: 600px;
-                margin: auto;
-                text-align: left;
             }
 
             #contact input,
