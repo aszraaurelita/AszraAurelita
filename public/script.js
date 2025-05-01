@@ -40,8 +40,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
     const query = 'nature'; 
     const perPage = 9;
-    fetch('/api/pexels?query=nature&per_page=9')
-  .then(res => res.json())
+    fetch(`https://api.pexels.com/v1/search?query=nature&per_page=9`, {
+      headers: {
+        Authorization: 'MiNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi'
+      }
+    })
+      .then(res => res.json())
   .then(data => {
     const gallery = document.getElementById('photo-gallery');
     data.photos.forEach(photo => {
