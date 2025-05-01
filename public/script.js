@@ -38,24 +38,29 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-    const query = 'nature'; 
-    const perPage = 9;
-    fetch('https://cors-anywhere.herokuapp.com/https://api.pexels.com/v1/search?query=nature&per_page=9', {
-      headers: {
-        Authorization: 'iNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi'    
-      }
-    })
-      .then(res => res.json())
-  .then(data => {
-    const gallery = document.getElementById('photo-gallery');
-    data.photos.forEach(photo => {
-      const img = document.createElement('img');
-      img.src = photo.src.medium;
-      img.alt = photo.photographer;
-      gallery.appendChild(img);
-    });
-  })
-  .catch(err => {
-    console.error('Gagal mengambil foto dari Pexels:', err);
-  });
+  fetch("https://pokeapi.co/api/v2/pokemon/pikachu")
+    .then(response => console.log(responese))
+    .then(data => console.log(data.id))
+    .catch(error => console.error(error));
+
+  //   const query = 'nature'; 
+  //   const perPage = 9;
+  //   fetch('https://cors-anywhere.herokuapp.com/https://api.pexels.com/v1/search?query=nature&per_page=9', {
+  //     headers: {
+  //       Authorization: 'iNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi'    
+  //     }
+  //   })
+  //     .then(res => res.json())
+  // .then(data => {
+  //   const gallery = document.getElementById('photo-gallery');
+  //   data.photos.forEach(photo => {
+  //     const img = document.createElement('img');
+  //     img.src = photo.src.medium;
+  //     img.alt = photo.photographer;
+  //     gallery.appendChild(img);
+  //   });
+  // })
+  // .catch(err => {
+  //   console.error('Gagal mengambil foto dari Pexels:', err);
+  // });
 
