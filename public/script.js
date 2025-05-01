@@ -38,7 +38,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-    const PEXELS_API_KEY = 'MiNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi';
     const query = 'nature'; 
     const perPage = 9;
     fetch('/api/pexels?query=nature&per_page=9')
