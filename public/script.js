@@ -69,4 +69,7 @@ document.addEventListener('DOMContentLoaded', function() {
               }
               
           }
-          
+          document.addEventListener("DOMContentLoaded", function () {
+            ambilGambarDariPexels(); // ← Pastikan ini ada
+        });
+        
