@@ -38,24 +38,35 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-async function fetchData() {
+            // Slot API Key
+            const API_KEY = "iNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi"; // ← Ganti dengan API KEY kamu
 
-  try{
-    const pokemonName = document.getElementById("pokemonName").value.toLowerCase();
-    const response = await fetch('https://pokeapi.co/api/v2/pokemon/${pokemonName}');
-    
-    if (!response.ok){
-      throw new Error("Could not fetch resource");
-    }
-    const data = await response.json();
-    const pokemonSprite = data.sprites.front_default;
-    const imgElement = document.getElementById("pokemonSprite");
-
-    imgElement.src = pokemonSprite;
-    imgElement.style.display = "block";
-  }
-  catch(error){
-    console.error(error);
-  }
-  
-}
+            async function ambilGambarDariPexels(query = "nature") {
+              try {
+                  const response = await fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=6`, {
+                      headers: {
+                          Authorization: API_KEY
+                      }
+                  });
+          
+                  const data = await response.json();
+          
+                  const container = document.getElementById("hasilAPI");
+                  container.innerHTML = ""; // Kosongkan sebelum menampilkan
+          
+                  data.photos.forEach(photo => {
+                      const img = document.createElement("img");
+                      img.src = photo.src.medium;
+                      img.alt = photo.photographer;
+                      img.style.margin = "10px";
+                      img.style.width = "200px";
+                      img.style.borderRadius = "10px";
+                      container.appendChild(img);
+                  });
+          
+              } catch (error) {
+                  console.error("Gagal mengambil gambar:", error);
+              }
+              
+          }
+          
