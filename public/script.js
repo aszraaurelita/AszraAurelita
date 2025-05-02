@@ -38,12 +38,11 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 
-            // Slot API Key
-            const API_KEY = "iNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi"; // ← Ganti dengan API KEY kamu
+           const API_KEY = "iNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi"; 
 
             async function ambilGambarDariPexels(query = "nature") {
               try {
-                  const response = await fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=6`, {
+                  const response = await fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=5`, {
                       headers: {
                           Authorization: API_KEY
                       }
