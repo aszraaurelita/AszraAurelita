@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                   const data = await response.json();
           
                   const container = document.getElementById("hasilAPI");
-                  container.innerHTML = ""; // Kosongkan sebelum menampilkan
+                  container.innerHTML = ""; 
           
                   data.photos.forEach(photo => {
                       const img = document.createElement("img");
@@ -69,6 +69,6 @@ document.addEventListener('DOMContentLoaded', function() {
               
           }
           document.addEventListener("DOMContentLoaded", function () {
-            ambilGambarDariPexels(); // ← Pastikan ini ada
+            ambilGambarDariPexels(); 
         });
         
