@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
            const API_KEY = "iNw1TyIq7MPE48Se63ayIQriqhPr6L9mVduU6eyz8s10YpamyVEo4QQi"; 
 
-            async function ambilGambarDariPexels(query = "nature") {
+            async function ambilGambarDariPexels(query = "flower") {
               try {
                   const response = await fetch(`https://api.pexels.com/v1/search?query=${query}&per_page=5`, {
                       headers: {
